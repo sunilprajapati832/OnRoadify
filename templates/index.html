@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnRoadify - AI Vehicle Price Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>OnRoadify</h1>
+    <form action="/calculate" method="POST">
+        <label>Ex-Showroom Price:</label>
+        <input type="number" name="price" required>
+        <label>City:</label>
+        <input type="text" name="city" required>
+        <button type="submit">Calculate On-Road Price</button>
+    </form>
+    <hr>
+        <h3>💬 Ask our AI Assistant</h3>
+        <input id="aiInput" type="text" placeholder="Ask about pricing, models..." />
+        <button type="button" onclick="askAI()">Ask</button>
+        <p id="aiResponse"></p>
+
+        <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+        
+</body>
+</html>
