@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from routes.calculator_routes import calculator_blueprint
 from routes.ai_routes import ai_blueprint
-
 app = Flask(__name__)
 
 app.register_blueprint(calculator_blueprint)
