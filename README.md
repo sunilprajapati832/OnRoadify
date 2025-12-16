@@ -2,6 +2,8 @@
 ## Where Ex-Showroom Meets Reality
 
 OnRoadify is a production-deployed, AI-powered web application that calculates the exact on-road price of a vehicle based on ex-showroom price and city-specific tax rules. It provides a transparent cost breakdown including road tax and insurance, along with an AI Assistant to answer vehicle pricing and policy questions.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-blue?style=for-the-badge)](https://onroadify.onrender.com)
+
 🔗 Live Application:
 👉 https://onroadify.onrender.com
 
