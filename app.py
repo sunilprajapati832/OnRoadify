@@ -4,12 +4,13 @@ from routes.ai_routes import ai_blueprint
 
 app = Flask(__name__)
 
+# Register Blueprints
 app.register_blueprint(calculator_blueprint)
 app.register_blueprint(ai_blueprint)
 
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

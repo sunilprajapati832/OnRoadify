@@ -2,15 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OnRoadify - Result</title>
+    <title>OnRoadify – On-Road Price Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h2>✅ Vehicle Price Details</h2>
-    <p>Ex-Showroom Price: ₹{{ price }}</p>
-    <p>City: {{ city }}</p>
-    <p>Tax: ₹{{ tax }}</p>
-    <p>Insurance: ₹{{ insurance }}</p>
-    <h3>On-Road Price: ₹{{ on_road_price }}</h3>
-    <a href="/">Back</a>
+
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/OnRoadify-logo.png') }}"
+                 alt="OnRoadify Logo"
+                 class="logo">
+        </div>
+    </nav>
+
+    <section class="result-section">
+        <h2>Vehicle Price Breakdown</h2>
+
+        <div class="price-card">
+            <p><strong>City:</strong> {{ city }}</p>
+            <p><strong>Ex-Showroom Price:</strong> ₹{{ price }}</p>
+            <p><strong>Road Tax:</strong> ₹{{ tax }}</p>
+            <p><strong>Insurance:</strong> ₹{{ insurance }}</p>
+
+            <hr>
+
+            <h3>Total On-Road Price</h3>
+            <h1>₹{{ on_road_price }}</h1>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="back-btn">
+            Calculate Another Vehicle
+        </a>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+
 </body>
 </html>

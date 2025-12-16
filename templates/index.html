@@ -2,58 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OnRoadify - AI Vehicle Price Calculator</title>
+    <title>OnRoadify – AI Vehicle Price Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <!-- Navbar with only logo -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <img src="{{ url_for('static', filename='images/OnRoadify-logo.png') }}" alt="OnRoadify Logo" class="logo">
-        </div>
-    </nav>
+<!-- ================= Navbar ================= -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img
+            src="{{ url_for('static', filename='images/OnRoadify-logo.png') }}"
+            alt="OnRoadify Logo"
+            class="logo"
+        >
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h2>Calculate Your Exact On-Road Price Instantly</h2>
+<!-- ================= Hero Section ================= -->
+<section class="hero">
+    <div class="overlay"></div>
 
-            <form action="/calculate" method="POST" class="price-form">
-                <input type="number" name="price" placeholder="Enter Ex-Showroom Price (₹)" required>
-                <input type="text" name="city" placeholder="Enter City Name" required>
-                <button type="submit">Calculate On-Road Price</button>
-            </form>
-        </div>
-    </section>
+    <div class="hero-content">
+        <h2>Calculate Your Exact On-Road Price Instantly</h2>
 
-    <!-- AI Chatbot Section -->
-    <section id="ai-chatbot">
-        <h3>💬 Ask our AI Assistant</h3>
-        <div class="chat-container">
-            <input id="aiInput" type="text" placeholder="Ask about pricing, models..." />
-            <button type="button" onclick="askAI()">Ask</button>
-        </div>
-        <p id="aiResponse"></p>
-    </section>
+        <form
+            action="{{ url_for('calculator.calculate') }}"
+            method="POST"
+            class="price-form"
+        >
 
-    <footer class="site-footer">
-        <p>© 2025 OnRoadify. All Rights Reserved.</p>
-    </footer>
+            <!-- Ex-Showroom Price -->
+            <input
+                type="number"
+                name="price"
+                placeholder="Enter Ex-Showroom Price (₹)"
+                min="50000"
+                step="1000"
+                required
+            >
 
-    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
-    <script>
-     // Navbar scroll effect
-     window.addEventListener('scroll', function() {
-     const navbar = document.querySelector('.navbar');
-     if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-     } else {
-      navbar.classList.remove('scrolled');
-     }
+            <!-- City Auto-Suggest -->
+            <div class="city-autocomplete">
+                <input
+                    type="text"
+                    id="cityInput"
+                    name="city"
+                    placeholder="Enter City Name"
+                    autocomplete="off"
+                    required
+                >
+                <ul id="citySuggestions" class="suggestions"></ul>
+            </div>
+
+            <button type="submit">
+                Calculate On-Road Price
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- ================= AI Assistant ================= -->
+<section id="ai-chatbot">
+    <h3>Ask our AI Assistant</h3>
+
+    <div class="chat-container">
+        <input
+            id="aiInput"
+            type="text"
+            placeholder="Ask about prices, taxes, variants…"
+        >
+        <button type="button" onclick="askAI()">Ask</button>
+    </div>
+
+    <p id="aiResponse"></p>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+    <p>© 2025 OnRoadify. All Rights Reserved.</p>
+</footer>
+
+<!-- ================= Scripts (CRITICAL) ================= -->
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+<script src="{{ url_for('static', filename='js/city-autocomplete.js') }}"></script>
+
+<script>
+    window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
-    </script>
+</script>
 
 </body>
 </html>
