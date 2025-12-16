@@ -109,9 +109,9 @@ OnRoadify/
 
 
 ## Deployment Details
-**Hosting Platform:** Render
-**Start Command:** gunicorn app:app
-**Environment Variables:** FLASK_ENV=production
+**Hosting Platform:** Render <br>
+**Start Command:** gunicorn app:app <br>
+**Environment Variables:** FLASK_ENV=production <br>
 ✔ Live HTTPS
 ✔ Cloud hosted
 ✔ Auto wake on traffic
