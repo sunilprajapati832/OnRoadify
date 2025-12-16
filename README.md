@@ -3,6 +3,8 @@
 OnRoadify is an AI-powered web application designed to simplify the process of finding the exact on-road price of any vehicle — whether it’s a car, bike or scooter. By entering just the ex-showroom price and city, users get a full price breakdown including taxes, registration and insurance — instantly. The app also features an AI Chat Assistant to answer questions about vehicle models, pricing trends, and comparisons.
 
 ![Webpage Screenshot](static/images/WebpageScreenshotOnRoadify.png)
+![Webpage Screenshot](static/images/City_suggestions.png)
+![Webpage Screenshot](static/images/Output.png)
 
 ## ⚙️ Tech Stack
 
