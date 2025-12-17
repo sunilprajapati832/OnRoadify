@@ -6,6 +6,10 @@ OnRoadify is a production-deployed, AI-powered web application that calculates t
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-blue?style=for-the-badge)](https://onroadify.onrender.com)
 
 ## Application Preview
+![Webpage Screenshot](static/images/2.png)
+![Webpage Screenshot](static/images/1.png)
+![Webpage Screenshot](static/images/3.png)
+![Webpage Screenshot](static/images/4.png)
 ![Webpage Screenshot](static/images/WebpageScreenshotOnRoadify.png)
 ![Webpage Screenshot](static/images/City_suggestions.png)
 ![Webpage Screenshot](static/images/Output.png)
