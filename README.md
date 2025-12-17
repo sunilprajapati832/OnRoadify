@@ -10,9 +10,6 @@ OnRoadify is a production-deployed, AI-powered web application that calculates t
 ![Webpage Screenshot](static/images/1.png)
 ![Webpage Screenshot](static/images/3.png)
 ![Webpage Screenshot](static/images/4.png)
-![Webpage Screenshot](static/images/WebpageScreenshotOnRoadify.png)
-![Webpage Screenshot](static/images/City_suggestions.png)
-![Webpage Screenshot](static/images/Output.png)
 
 ## Key Functionalities
 ### 1. On-Road Price Calculation (Core Logic)
